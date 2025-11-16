@@ -97,7 +97,6 @@ export default function CodeAnalyzer() {
 
   const layout = {
     display: 'grid',
-    gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 1fr)',
     gap: 20,
     alignItems: 'flex-start',
   };
@@ -155,7 +154,7 @@ export default function CodeAnalyzer() {
 
   return (
     <div style={container}>
-      <div style={headerRow}>
+      <div style={headerRow} className="ca-header-row">
         <div style={titleBlock}>
           <h1 style={titleStyle}>
             Code Analyzer <span style={{ color: '#eab308' }}>✨</span>
@@ -166,7 +165,7 @@ export default function CodeAnalyzer() {
         </div>
       </div>
 
-      <div style={layout}>
+      <div style={layout} className="ca-layout">
         {/* Editor panel */}
         <div style={editorCard}>
           <div style={editorHeader}>
@@ -184,6 +183,8 @@ export default function CodeAnalyzer() {
             placeholder="Paste your C++/Python/JS/Rust/Java/any code here..."
             style={{
               width: '100%',
+              maxWidth: '100%',
+              boxSizing: 'border-box',
               minHeight: '42vh',
               background: 'radial-gradient(circle at top,#020617,#020617 45%,#020617)',
               border: '1px solid #0f172a',

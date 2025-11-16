@@ -29,6 +29,7 @@ export function NavbarDemo() {
 		gap: 16,
 		fontSize: 18,
 		color: "#cbd5f5",
+		flexWrap: "wrap",
 	};
 	const linkBase = {
 		textDecoration: "none",
