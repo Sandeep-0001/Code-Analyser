@@ -59,7 +59,7 @@ export function NavbarDemo() {
 						<NavLink to="https://contest-board.vercel.app" style={({ isActive }) => makeLinkStyle(isActive)}>
 							Contests
 						</NavLink>
-						<NavLink to="/code-analyser" style={({ isActive }) => makeLinkStyle(isActive)}>
+						<NavLink to="https://code-analyser-beta.vercel.app" style={({ isActive }) => makeLinkStyle(isActive)}>
 							Code Analyser
 						</NavLink>
 						<NavLink
