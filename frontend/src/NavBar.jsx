@@ -27,7 +27,7 @@ export function NavbarDemo() {
 	const linksRow = {
 		display: "flex",
 		gap: 16,
-		fontSize: 12,
+		fontSize: 18,
 		color: "#cbd5f5",
 	};
 	const linkBase = {
@@ -63,19 +63,16 @@ export function NavbarDemo() {
 							Code Analyser
 						</NavLink>
 						<NavLink
-							to="/similar-questions"
+							to="https://similar-question-search.vercel.app"
 							style={({ isActive }) => makeLinkStyle(isActive)}
 						>
 							Similar Qs
 						</NavLink>
-						<NavLink to="/notes" style={({ isActive }) => makeLinkStyle(isActive)}>
+						<NavLink to="https://gla-notes.vercel.app" style={({ isActive }) => makeLinkStyle(isActive)}>
 							Notes
 						</NavLink>
-						<NavLink to="/pyqs" style={({ isActive }) => makeLinkStyle(isActive)}>
-							PYQs
-						</NavLink>
 						<NavLink
-							to="/company-sheets"
+							to="https://companywise-sheet.vercel.app"
 							style={({ isActive }) => makeLinkStyle(isActive)}
 						>
 							Company Sheets
