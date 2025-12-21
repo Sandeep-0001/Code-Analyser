@@ -8,7 +8,7 @@ import './index.css';
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <div style={{ minHeight: '100vh', backgroundColor: '#020617' }}>
+      <div className="min-h-screen bg-slate-950 text-slate-200">
         <NavbarDemo />
         <CodeAnalyzer />
       </div>

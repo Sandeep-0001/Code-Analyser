@@ -221,7 +221,7 @@ const TimeComplexityChart = ({
 		aspectRatio: 1,
 	};
 	return (
-		<div style={{ width: 220, height: 180 }}>
+		<div className="h-[180px] w-[220px]">
 			<Line data={data} options={options} />
 		</div>
 	);
