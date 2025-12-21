@@ -44,8 +44,13 @@ app.post('/api/ai/analyze/complexity/ai', async (req, res) => {
       const resultObj = await analyzeWithOpenAI(code, model);
       return res.json({ result: resultObj });
     } catch (err) {
-      console.error('OpenAI analyze error:', err?.message || err);
-      return res.status(500).json({ error: 'Failed to analyze with OpenAI.' });
+      const message = err?.message || String(err);
+      console.error('AI analyze error:', message);
+      // Provide a safe, actionable message to the client (no stack traces).
+      if (message.toLowerCase().includes('missing gemini_api_key')) {
+        return res.status(500).json({ error: 'Missing GEMINI_API_KEY on the backend.' });
+      }
+      return res.status(500).json({ error: 'Failed to analyze with AI.', message });
     }
   } catch (err) {
     console.error('Analyze error:', err);

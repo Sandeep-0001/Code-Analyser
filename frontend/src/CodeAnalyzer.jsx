@@ -32,7 +32,10 @@ export default function CodeAnalyzer() {
     }
     setLoading(true);
     try {
-      const url = `${import.meta.env.VITE_BACKEND_URL}/api/ai/analyze/complexity/ai`;
+      const backendBase = (import.meta.env.VITE_BACKEND_URL || '').replace(/\/+$/, '');
+      const url = backendBase
+        ? `${backendBase}/api/ai/analyze/complexity/ai`
+        : `/api/ai/analyze/complexity/ai`;
       const response = await axios.post(url, { code }, { withCredentials: true });
       setResult(null);
       const parsed = response.data.result;
