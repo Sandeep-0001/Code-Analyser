@@ -58,6 +58,6 @@ app.post('/api/ai/analyze/complexity/ai', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Code Analyzer backend listening on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Code Analyzer backend listening on port ${PORT}`);
 });
