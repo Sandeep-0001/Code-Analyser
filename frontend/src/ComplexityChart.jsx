@@ -145,11 +145,13 @@ const TimeComplexityChart = ({
 				display: true,
 				position: 'bottom',
 				labels: {
-					color: '#9ca3af',
+					color: '#e2e8f0',
 					font: {
-						size: 10,
+						size: 11,
+						weight: '500',
 					},
 					usePointStyle: true,
+					padding: 15,
 				},
 			},
 			tooltip: {
@@ -167,10 +169,10 @@ const TimeComplexityChart = ({
 					family: "monospace",
 					weight: "normal",
 				},
-				backgroundColor: "oklch(20.8% 0.042 265.755)", // Tooltip background
-				titleColor: "oklch(100% 0 0)", // Title text color
-				bodyColor: "oklch(100% 0 0)", // Main text color
-				borderColor: "oklch(27.8% 0.033 256.848)", // Border color
+				backgroundColor: 'rgba(15, 23, 42, 0.95)',
+				titleColor: '#f1f5f9',
+				bodyColor: '#e2e8f0',
+				borderColor: 'rgba(148, 163, 184, 0.2)',
 				borderWidth: 1,
 				cornerRadius: 6,
 				padding: 10,
@@ -193,8 +195,8 @@ const TimeComplexityChart = ({
 				},
 				border: {
 					display: true,
-					color: "#888",
-					width: 0.3,
+					color: 'rgba(148, 163, 184, 0.2)',
+					width: 1,
 				},
 				ticks: {
 					display: false,
@@ -208,8 +210,8 @@ const TimeComplexityChart = ({
 				},
 				border: {
 					display: true,
-					color: "#888",
-					width: 0.3,
+					color: 'rgba(148, 163, 184, 0.2)',
+					width: 1,
 				},
 				ticks: {
 					display: false,
@@ -221,8 +223,11 @@ const TimeComplexityChart = ({
 		aspectRatio: 1,
 	};
 	return (
-		<div className="h-[180px] w-[220px]">
-			<Line data={data} options={options} />
+		<div className="h-[200px] w-[240px] relative">
+			<div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 rounded-lg blur-xl"></div>
+			<div className="relative bg-slate-900/50 backdrop-blur-sm rounded-lg p-2 border border-slate-700/30">
+				<Line data={data} options={options} />
+			</div>
 		</div>
 	);
 };

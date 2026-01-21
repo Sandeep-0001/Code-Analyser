@@ -50,13 +50,14 @@ export default function CodeAnalyzer() {
   };
 
   const container = {
-    maxWidth: 1080,
+    maxWidth: 1200,
     margin: '0 auto',
-    padding: '80px 20px 40px',
+    padding: '100px 24px 60px',
     color: '#e5e7eb',
     display: 'flex',
     flexDirection: 'column',
-    gap: 24,
+    gap: 32,
+    position: 'relative',
   };
 
   const headerRow = {
@@ -73,16 +74,24 @@ export default function CodeAnalyzer() {
   };
 
   const titleStyle = {
-    fontSize: 32,
-    fontWeight: 800,
-    letterSpacing: 0.4,
+    fontSize: 48,
+    fontWeight: 900,
+    letterSpacing: -0.02,
     margin: 0,
+    background: 'linear-gradient(135deg, #60a5fa 0%, #a78bfa 25%, #f472b6 50%, #fbbf24 75%, #34d399 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    textShadow: '0 0 80px rgba(96, 165, 250, 0.5)',
+    filter: 'drop-shadow(0 0 20px rgba(96, 165, 250, 0.3))',
   };
 
   const subtitleStyle = {
     margin: 0,
-    fontSize: 13,
-    color: '#9ca3af',
+    fontSize: 16,
+    color: '#94a3b8',
+    fontWeight: 400,
+    lineHeight: 1.6,
   };
 
   const badge = {
@@ -105,14 +114,17 @@ export default function CodeAnalyzer() {
   };
 
   const editorCard = {
-    background: 'radial-gradient(circle at top,#020617,#020617 40%,#020617)',
-    borderRadius: 14,
-    border: '1px solid #1e293b',
-    boxShadow: '0 18px 45px rgba(15,23,42,0.75)',
-    padding: 18,
+    background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95))',
+    borderRadius: 20,
+    border: '1px solid rgba(148, 163, 184, 0.1)',
+    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(148, 163, 184, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+    padding: 24,
     display: 'flex',
     flexDirection: 'column',
-    gap: 10,
+    gap: 16,
+    backdropFilter: 'blur(20px)',
+    position: 'relative',
+    overflow: 'hidden',
   };
 
   const editorHeader = {
@@ -148,11 +160,14 @@ export default function CodeAnalyzer() {
   };
 
   const card = {
-    background: 'radial-gradient(circle at top,#020617,#020617 40%,#020617)',
-    border: '1px solid #1f2937',
-    borderRadius: 14,
-    padding: 18,
-    boxShadow: '0 18px 45px rgba(15,23,42,0.75)',
+    background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95))',
+    border: '1px solid rgba(148, 163, 184, 0.1)',
+    borderRadius: 20,
+    padding: 24,
+    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(148, 163, 184, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+    backdropFilter: 'blur(20px)',
+    position: 'relative',
+    overflow: 'hidden',
   };
 
   return (
@@ -160,10 +175,10 @@ export default function CodeAnalyzer() {
       <div style={headerRow} className="ca-header-row">
         <div style={titleBlock}>
           <h1 style={titleStyle}>
-            Code Analyzer <span style={{ color: '#eab308' }}>✨</span>
+            Code Analyzer <span style={{ color: '#fbbf24', fontSize: '0.8em' }}>⚡</span>
           </h1>
           <p style={subtitleStyle}>
-            Paste any snippet and get AI-assisted time & space complexity with a visual comparison.
+            Paste any snippet and get AI-powered time & space complexity analysis with stunning visual comparisons.
           </p>
         </div>
       </div>
@@ -188,18 +203,19 @@ export default function CodeAnalyzer() {
               width: '100%',
               maxWidth: '100%',
               boxSizing: 'border-box',
-              minHeight: '42vh',
-              background: 'radial-gradient(circle at top,#020617,#020617 45%,#020617)',
-              border: '1px solid #0f172a',
-              borderRadius: 10,
+              minHeight: '45vh',
+              background: 'linear-gradient(145deg, #020617, #0f172a)',
+              border: '1px solid rgba(148, 163, 184, 0.1)',
+              borderRadius: 16,
               color: '#e5e7eb',
-              padding: 16,
+              padding: 20,
               fontFamily:
                 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-              fontSize: 13,
+              fontSize: 14,
               resize: 'vertical',
               outline: 'none',
-              boxShadow: '0 0 0 1px rgba(148,163,184,0.1)',
+              boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(148, 163, 184, 0.1)',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           />
 
@@ -211,24 +227,39 @@ export default function CodeAnalyzer() {
               onClick={handleSubmit}
               disabled={loading}
               style={{
-                padding: '10px 18px',
-                borderRadius: 9999,
-                border: '1px solid #22c55e33',
+                padding: '14px 28px',
+                borderRadius: 12,
+                border: 'none',
                 background: loading
-                  ? 'linear-gradient(135deg,#047857,#065f46)'
-                  : 'linear-gradient(135deg,#22c55e,#16a34a)',
-                color: '#022c22',
+                  ? 'linear-gradient(135deg, #64748b, #475569)'
+                  : 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                color: '#ffffff',
                 fontWeight: 700,
                 cursor: loading ? 'progress' : 'pointer',
                 opacity: loading ? 0.8 : 1,
-                fontSize: 13,
+                fontSize: 14,
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: 6,
-                boxShadow: '0 10px 30px rgba(34,197,94,0.32)',
+                gap: 8,
+                boxShadow: loading 
+                  ? '0 10px 25px rgba(100, 116, 139, 0.3)'
+                  : '0 10px 25px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.1)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: loading ? 'none' : 'translateY(0)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
               }}
             >
-              {loading ? 'Analyzing…' : 'Analyze Code'}
+              {loading ? (
+                <>
+                  <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                  Analyzing…
+                </>
+              ) : (
+                <>
+                  Analyze Code
+                </>
+              )}
             </button>
           </div>
         </div>
@@ -248,20 +279,22 @@ export default function CodeAnalyzer() {
               <>
                 <h2
                   style={{
-                    fontSize: 22,
-                    fontWeight: 800,
+                    fontSize: 28,
+                    fontWeight: 900,
                     textAlign: 'left',
-                    backgroundImage: 'linear-gradient(to right,#3b82f6,#06b6d4)',
+                    background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
                     WebkitBackgroundClip: 'text',
-                    color: 'transparent',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
                     marginTop: 0,
-                    marginBottom: 4,
+                    marginBottom: 8,
+                    letterSpacing: -0.02,
                   }}
                 >
-                  Code Complexity Analysis
+                  🎯 Code Complexity Analysis
                 </h2>
-                <p style={{ fontSize: 12, color: '#94a3b8', marginTop: 0, marginBottom: 14 }}>
-                  Estimated from your snippet using heuristics and AI. Treat this as guidance, not a formal proof.
+                <p style={{ fontSize: 14, color: '#94a3b8', marginTop: 0, marginBottom: 20, lineHeight: 1.6 }}>
+                  📊 Advanced AI-powered analysis with visual performance comparisons. Treat as guidance, not formal proof.
                 </p>
 
                 <div style={{ display: 'grid', gap: 18 }}>
