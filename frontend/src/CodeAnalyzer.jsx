@@ -175,7 +175,7 @@ export default function CodeAnalyzer() {
       <div style={headerRow} className="ca-header-row">
         <div style={titleBlock}>
           <h1 style={titleStyle}>
-            Code Analyzer <span style={{ color: '#fbbf24', fontSize: '0.8em' }}>⚡</span>
+            Code Analyzer
           </h1>
           <p style={subtitleStyle}>
             Paste any snippet and get AI-powered time & space complexity analysis with stunning visual comparisons.
@@ -291,10 +291,10 @@ export default function CodeAnalyzer() {
                     letterSpacing: -0.02,
                   }}
                 >
-                  🎯 Code Complexity Analysis
+                  Code Complexity Analysis
                 </h2>
                 <p style={{ fontSize: 14, color: '#94a3b8', marginTop: 0, marginBottom: 20, lineHeight: 1.6 }}>
-                  📊 Advanced AI-powered analysis with visual performance comparisons. Treat as guidance, not formal proof.
+                  Advanced AI-powered analysis with visual performance comparisons. Treat as guidance, not formal proof.
                 </p>
 
                 <div style={{ display: 'grid', gap: 18 }}>

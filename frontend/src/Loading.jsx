@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 export const Loading = ({ size = 48 }) => {
   const quotes = [
-    '🔍 Analyzing loops and recursion...',
-    '⚡ Measuring time and space complexity...',
-    '📈 Estimating performance curves...',
-    '🎯 Scanning for nested iterations...',
-    '🚀 Calculating Big O notation...',
-    '💡 Optimizing algorithm analysis...'
+    'Analyzing loops and recursion...',
+    'Measuring time and space complexity...',
+    'Estimating performance curves...',
+    'Scanning for nested iterations...',
+    'Calculating Big O notation...',
+    'Optimizing algorithm analysis...'
   ];
   const [i, setI] = useState(0);
   useEffect(() => {
