@@ -26,7 +26,7 @@ export default function Navbar() {
                 alt="CareerPrep AI Logo" 
                 className="h-10 w-10 rounded-lg object-contain"
               />
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+              <div className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-cyan-500 bg-clip-text text-transparent">
                 CareerPrep AI
               </div>
             </div>
@@ -44,7 +44,7 @@ export default function Navbar() {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               )}
-              <a href="https://ideathon.careerprep.tech/register" target="_blank" rel="noopener noreferrer" className="ml-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="https://ideathon.careerprep.tech/register" target="_blank" rel="noopener noreferrer" className="ml-4 bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25">
                 Get Started Free
               </a>
             </div>
@@ -80,7 +80,7 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             )}
-           <a href="https://ideathon.careerprep.tech/register" target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-medium mt-2 text-center block">
+           <a href="https://ideathon.careerprep.tech/register" target="_blank" rel="noopener noreferrer" className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg font-medium mt-2 text-center block">
               Get Started Free
             </a>
           </div>
