@@ -11,6 +11,7 @@ export default function Navbar() {
     { name: 'Contests', href: 'https://contest.careerprep.tech' },
     { name: 'Resume Tools', href: 'https://resumegenie.careerprep.tech' },
     { name: 'Study Material', href: 'https://interview.careerprep.tech' },
+    { name: 'About Us', href: 'https://careerprep.tech/about'},
     { name: 'Login', href: 'https://practice.careerprep.tech/login' }
   ];
 
@@ -20,14 +21,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center gap-3">
+            <div className="shrink-0 flex items-center gap-3">
               <img 
                 src={logo} 
                 alt="CareerPrep AI Logo" 
                 className="h-10 w-10 rounded-lg object-contain"
               />
-              <div className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-cyan-500 bg-clip-text text-transparent">
-                CareerPrep AI
+              <div className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-none">
+                <span className="text-white">Career</span>
+                <span className="text-cyan-400">Prep AI</span>
               </div>
             </div>
           </div>
